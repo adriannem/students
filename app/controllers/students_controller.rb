@@ -61,6 +61,13 @@ class StudentsController < ApplicationController
     end
   end
 
+def assign
+  @student = Student.find(params[:id])
+  @student.assignments.create
+  redirect_to(students_path)
+end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student
